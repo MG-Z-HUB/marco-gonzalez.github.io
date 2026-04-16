@@ -1166,28 +1166,31 @@
   });
 
   // --- CONTADOR DE VISITAS ---
-  // Usa countapi.xyz — servicio gratuito para sitios estáticos / GitHub Pages
-  // El namespace "marco-gonzalez-cv" y key "visitas" son únicos para este sitio.
-  // Cambia el namespace por tu dominio real cuando lo publiques, ej: "marco-gonzalez.github.io"
+  // Usa counterapi.dev/v1 — gratuito, sin auth, diseñado para sitios estáticos.
+  // Namespace: "marco-gonzalez-github-io" | Counter: "visitas"
+  // Docs: https://counterapi.dev/api/endpoints
   (async () => {
     const el = document.getElementById('visit-count');
-    try {
-      const res = await fetch('https://api.countapi.xyz/hit/mg-z-hub.github.io/marco-gonzalez.github.io/visitas');
-      if (!res.ok) throw new Error();
-      const data = await res.json();
-      // Animación numérica de conteo
-      const target = data.value;
-      const start = Math.max(0, target - 30);
-      let current = start;
+    const API = 'https://api.counterapi.dev/v1/marco-gonzalez-github-io/visitas/up';
+    function animateCount(target) {
+      const start = Math.max(0, target - 40);
+      let cur = start;
       el.textContent = start.toLocaleString('es-MX');
       const step = () => {
-        current += Math.ceil((target - current) / 6);
-        if (current >= target) { el.textContent = target.toLocaleString('es-MX'); return; }
-        el.textContent = current.toLocaleString('es-MX');
+        cur += Math.ceil((target - cur) / 5);
+        if (cur >= target) { el.textContent = target.toLocaleString('es-MX'); return; }
+        el.textContent = cur.toLocaleString('es-MX');
         requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
-    } catch {
+    }
+    try {
+      const res = await fetch(API);
+      if (!res.ok) throw new Error('API error ' + res.status);
+      const data = await res.json();
+      animateCount(data.count ?? data.value ?? 0);
+    } catch (e) {
+      console.warn('Contador:', e.message);
       el.textContent = '—';
     }
   })();
