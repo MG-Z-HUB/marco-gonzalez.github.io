@@ -1127,15 +1127,26 @@
 <footer>
   <p style="margin-bottom: 0.5rem; color: var(--muted);">Marco A. González Obregón — Software Architect & Tech Lead</p>
   <p style="margin-bottom: 1rem;">Ciudad de México · 2026 · Construido con HTML/CSS puro · Listo para GitHub Pages</p>
-  <div style="display:inline-flex; align-items:center; gap:0.6rem; background:var(--card); border:1px solid var(--border); border-radius:6px; padding:0.5rem 1.1rem;">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-    <span style="font-size:0.7rem; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase;">Visitas</span>
-    <span id="visit-count" style="font-family:var(--display); font-size:0.95rem; font-weight:800; color:var(--accent); min-width:2rem; text-align:center;">—</span>
+  <!-- 
+    Contador de visitas con hits.seeyoufarm.com
+    - Funciona con <img>, sin fetch, sin CORS, sin APIs externas que fallen
+    - Cada carga de la imagen cuenta como una visita automáticamente
+    - Muestra visitas del día + total acumulado
+  -->
+  <div style="display:inline-flex; flex-direction:column; align-items:center; gap:0.5rem;">
+    <a href="https://hits.seeyoufarm.com" target="_blank" title="Contador de visitas">
+      <img
+        src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fmg-z-hub.github.io&count_bg=%2300E5A0&title_bg=%2316161F&icon=eye.svg&icon_color=%23FFFFFF&title=Visitas&edge_flat=false"
+        alt="Contador de visitas"
+        style="height:28px; border-radius:4px;"
+      />
+    </a>
+    <span style="font-size:0.62rem; color:var(--muted2); letter-spacing:0.05em;">hoy / total</span>
   </div>
 </footer>
 
 <script>
-  // Intersection Observer para fade-in de jobs
+  // Intersection Observer para fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1152,7 +1163,7 @@
     observer.observe(el);
   });
 
-  // Smooth active nav highlight
+  // Nav highlight activo al hacer scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
@@ -1164,36 +1175,6 @@
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
     });
   });
-
-  // --- CONTADOR DE VISITAS ---
-  // Usa counterapi.dev/v1 — gratuito, sin auth, diseñado para sitios estáticos.
-  // Namespace: "marco-gonzalez-github-io" | Counter: "visitas"
-  // Docs: https://counterapi.dev/api/endpoints
-  (async () => {
-    const el = document.getElementById('visit-count');
-    const API = 'https://api.counterapi.dev/v1/marco-gonzalez-github-io/visitas/up';
-    function animateCount(target) {
-      const start = Math.max(0, target - 40);
-      let cur = start;
-      el.textContent = start.toLocaleString('es-MX');
-      const step = () => {
-        cur += Math.ceil((target - cur) / 5);
-        if (cur >= target) { el.textContent = target.toLocaleString('es-MX'); return; }
-        el.textContent = cur.toLocaleString('es-MX');
-        requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    }
-    try {
-      const res = await fetch(API);
-      if (!res.ok) throw new Error('API error ' + res.status);
-      const data = await res.json();
-      animateCount(data.count ?? data.value ?? 0);
-    } catch (e) {
-      console.warn('Contador:', e.message);
-      el.textContent = '—';
-    }
-  })();
 </script>
 
 </body>
