@@ -1,0 +1,47 @@
+name: Contador de Visitas
+
+# Se dispara cuando alguien visita el sitio a través del endpoint de GitHub Pages.
+# En la práctica: se ejecuta manualmente o puedes activarlo con un webhook.
+# La forma más simple: se auto-ejecuta cada hora para mantener el conteo actualizado.
+on:
+  # Ejecutar cada hora (puedes ajustar el cron)
+  schedule:
+    - cron: '0 * * * *'
+
+  # También se puede disparar manualmente desde la pestaña Actions
+  workflow_dispatch:
+
+  # Se ejecuta en cada push (deployment), incrementando en cada nueva versión
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  increment-counter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Incrementar contador
+        run: |
+          # Leer valor actual
+          CURRENT=$(jq '.visits' counter.json)
+          # Sumar 1
+          NEW=$((CURRENT + 1))
+          # Guardar nuevo valor
+          echo "{ \"visits\": $NEW }" > counter.json
+          echo "Visitas actualizadas: $CURRENT → $NEW"
+
+      - name: Commit y push del contador
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add counter.json
+          git diff --cached --quiet || git commit -m "chore: actualizar contador de visitas [skip ci]"
+          git push
