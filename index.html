@@ -1172,17 +1172,16 @@
   });
 
   // ── CONTADOR DE VISITAS ─────────────────────────────────────────────
-  // Lee counter.json del propio repo (GitHub raw) → muestra el total.
-  // El incremento real lo hace el GitHub Action "counter.yml" en cada push/deploy.
-  // Sin APIs externas, sin CORS, sin tokens. Funciona 100% en GitHub Pages.
+  // Cloudflare Worker gratuito — sin CORS, incrementa en cada visita real.
+  // Cambia la URL por la de tu Worker después de desplegarlo.
   (async () => {
     const el = document.getElementById('visit-count');
-    const RAW = 'https://raw.githubusercontent.com/MG-Z-HUB/marco-gonzalez.github.io/main/counter.json';
+    // ↓ Reemplaza esta URL con la de tu Cloudflare Worker desplegado
+    const WORKER_URL = 'https://cv-counter.TU-USUARIO.workers.dev';
     try {
-      const res = await fetch(RAW + '?t=' + Date.now()); // evita caché
+      const res = await fetch(WORKER_URL);
       if (!res.ok) throw new Error(res.status);
       const { visits } = await res.json();
-      // Animación de conteo
       const target = Number(visits) || 0;
       const start  = Math.max(0, target - 30);
       let cur = start;
