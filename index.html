@@ -3,6 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Marco A. González Obregón — Director / Gerente de Desarrollo de Software y Arquitectura de Soluciones. 20+ años en software, Cloud, transformación digital, DevOps e IA. Ciudad de México." />
+  <meta name="author" content="Marco A. González Obregón" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="canonical" href="https://mg-z-hub.github.io/marco-gonzalez.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Marco A. González Obregón — Director / Gerente de Desarrollo de Software" />
+  <meta property="og:description" content="20+ años liderando equipos, software y transformación digital · Arquitectura de Software · Cloud · Innovación." />
+  <meta property="og:url" content="https://mg-z-hub.github.io/marco-gonzalez.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:locale" content="es_MX" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marco A. González Obregón",
+    "jobTitle": "Director / Gerente de Desarrollo de Software",
+    "url": "https://mg-z-hub.github.io/marco-gonzalez.github.io/",
+    "email": "mailto:marco4780@hotmail.com",
+    "address": {"@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressCountry": "MX"},
+    "sameAs": ["https://www.linkedin.com/in/marco-antonio-gonz%C3%A1lez-obregon-111a581b1/"]
+  }
+  </script>
   <title>Marco A. González Obregón — Director / Gerente de Desarrollo de Software</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -480,6 +503,65 @@
       letter-spacing: 0.05em;
     }
 
+
+    .stat-note {
+      margin-top: 0.45rem;
+      color: var(--muted2);
+      font-size: 0.62rem;
+      line-height: 1.45;
+      letter-spacing: 0.03em;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .btn-primary, .btn-outline, .btn-download {
+      min-height: 44px;
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0.8rem 0.9rem; gap: 0.75rem; }
+      .nav-logo { font-size: 0.85rem; flex: 0 0 auto; }
+      .nav-links {
+        gap: 0.9rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        white-space: nowrap;
+        flex: 1 1 auto;
+        padding-bottom: 2px;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links a { font-size: 0.62rem; letter-spacing: 0.07em; }
+      .hero { min-height: auto; padding: 6.5rem 1.15rem 3rem; }
+      .hero-label { font-size: 0.58rem; letter-spacing: 0.09em; line-height: 1.5; }
+      .hero-name { font-size: clamp(2.5rem, 13vw, 3.8rem); }
+      .hero-title { font-size: 1rem; line-height: 1.45; }
+      .hero-subtitle { font-size: 0.72rem; line-height: 1.6; }
+      .hero-desc { font-size: 0.78rem; line-height: 1.75; }
+      .hero-stats { grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 2rem; }
+      .stat-card { padding: 1rem; }
+      .stat-num { font-size: 2rem; }
+      .stat-label { font-size: 0.6rem; line-height: 1.4; }
+      .stat-note { font-size: 0.56rem; }
+      section { padding: 3.5rem 1.15rem; }
+      .section-header { align-items: flex-start; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem; }
+      .section-title { font-size: 1.65rem; }
+      .job { padding-left: 1.7rem; margin-bottom: 2.4rem; }
+      .job-company { font-size: 0.72rem; }
+      .job-title { font-size: 0.92rem; }
+      .job-period { font-size: 0.62rem; }
+      .job-desc { font-size: 0.74rem; }
+      .project-card { padding: 1.25rem; }
+      .project-name { font-size: 0.95rem; }
+      .project-desc { font-size: 0.73rem; }
+      .skills-grid, .edu-grid { grid-template-columns: 1fr; }
+      .contact-bar { padding: 2.25rem 1.15rem; flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+
     /* responsive */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding: 6rem 2rem 3rem; }
@@ -543,15 +625,15 @@
 <body>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navegación principal">
   <div class="nav-logo">MAG/</div>
   <ul class="nav-links">
     <li><a href="#experiencia">Experiencia</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#educacion">Educación</a></li>
-    <li><a href="#descargar">Descargar CV</a></li>
-    <li><a href="https://wa.me/525527237092?text=Hola%20Marco%2C%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" style="color:#25D366; display:flex; align-items:center; gap:4px;">
+    <li><a href="#skills">Tecnologías</a></li>
+    <li><a href="#educacion">Formación</a></li>
+    <li><a href="#descargar">CV</a></li>
+    <li><a href="https://wa.me/525527237092?text=Hola%20Marco%2C%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" style="color:#25D366; display:flex; align-items:center; gap:4px;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
       WhatsApp
     </a></li>
@@ -566,13 +648,11 @@
     <p class="hero-title">20+ años liderando equipos, software y transformación digital</p>
     <p class="hero-subtitle">Arquitectura de Software · Cloud · Innovación · Ingeniería de Software</p>
     <p class="hero-desc">
-      <strong>Director / Gerente de Desarrollo de Software | Arquitecto de Soluciones | Consultor Tecnológico</strong><br><br>
-      Profesional de tecnología con más de 20 años de experiencia en dirección de desarrollo de software, arquitectura de soluciones, transformación digital y consultoría tecnológica. Capacidad para liderar equipos multidisciplinarios y conectar tecnología, operación y objetivos de negocio.<br><br>
-      Especializado en modernización de plataformas, arquitecturas cloud, microservicios, integración de sistemas, DevOps e Inteligencia Artificial, con experiencia en AWS, Azure y Google Cloud. Combino profundidad técnica con visión estratégica para definir arquitecturas, roadmaps tecnológicos y estrategias de transformación.<br><br>
-      Experiencia en proyectos para sector financiero, gobierno, retail, medios y empresas privadas, con liderazgo, toma de decisiones, gestión de stakeholders y orientación a resultados.
+      Líder tecnológico con más de 20 años de experiencia en desarrollo de software, arquitectura de soluciones y transformación digital. He liderado equipos multidisciplinarios y proyectos de principio a fin, conectando tecnología, operación y objetivos de negocio.<br><br>
+      Experiencia en modernización de plataformas, Cloud, microservicios, integración, DevOps e Inteligencia Artificial, trabajando con AWS, Azure y Google Cloud. Trayectoria en los sectores financiero, gobierno, retail, medios y empresas privadas.
     </p>
     <div class="hero-ctas">
-      <a href="mailto:marco4780@hotmail.com" class="btn-primary">Enviar mensaje</a>
+      <a href="mailto:marco4780@hotmail.com" class="btn-primary" aria-label="Enviar correo electrónico a Marco González">Enviar mensaje</a>
       <a href="#experiencia" class="btn-outline">Ver trayectoria</a>
     </div>
   </div>
@@ -588,11 +668,11 @@
     </div>
     <div class="stat-card">
       <div class="stat-num">3</div>
-      <div class="stat-label">Nubes: AWS · Azure · GCP</div>
+      <div class="stat-label">Nubes</div><div class="stat-note">AWS · Azure · GCP</div>
     </div>
     <div class="stat-card">
       <div class="stat-num">6</div>
-      <div class="stat-label">Áreas clave: Software · Cloud · IA · DevOps</div>
+      <div class="stat-label">Áreas clave</div><div class="stat-note">Arquitectura · Cloud · Desarrollo · DevOps · IA · Liderazgo</div>
     </div>
   </div>
 </section>
@@ -914,7 +994,7 @@
 <!-- PROJECTS -->
 <section id="proyectos">
   <div class="section-header">
-    <span class="section-tag">02 — Work</span>
+    <span class="section-tag">02 — Proyectos</span>
     <h2 class="section-title">Proyectos destacados</h2>
   </div>
 
@@ -924,7 +1004,7 @@
       <div class="project-icon" style="background: rgba(0,229,160,0.1);">☁️</div>
       <div class="project-name">Plataforma OTT & Streaming (VIVARO Digital)</div>
       <p class="project-desc">
-        Arquitectura cloud-native sobre AWS para plataforma de video bajo demanda. Microservicios serverless, integración con Bitmovin Player, analíticas con Google Analytics 4, sistema de pagos con Stripe y PayPal, y módulos de Machine Learning para recomendaciones de contenido.
+        Arquitectura cloud-native sobre AWS para plataforma de video bajo demanda. Microservicios serverless, integración con Bitmovin Player, analítica con Google Analytics y Bitmovin, sistema de pagos con Stripe y PayPal, y capacidades de Machine Learning.
       </p>
       <div class="job-tags" style="margin-bottom: 1rem;">
         <span class="tag accent">AWS Lambda</span>
@@ -956,7 +1036,7 @@
       </div>
       <div class="project-footer">
         <span class="project-company">IDS · 2024–2025</span>
-        <span class="tag purple">Fintech</span>
+        <span class="tag purple">Servicios financieros</span>
       </div>
     </div>
 
@@ -964,7 +1044,7 @@
       <div class="project-icon" style="background: rgba(255,107,107,0.1);">🏪</div>
       <div class="project-name">ERP & Punto de Venta Retail</div>
       <p class="project-desc">
-        Integración ERP SAP B1/R3 con punto de venta Wincor Nixdorf. Facturación electrónica CFDI, campañas SMS y dashboards para cadena retail con +100 sucursales.
+        Integración ERP SAP B1/R3 con punto de venta Wincor Nixdorf. Facturación electrónica CFDI, campañas SMS y dashboards para cadena retail.
       </p>
       <div class="job-tags" style="margin-bottom: 1rem;">
         <span class="tag purple">SAP B1 · R3</span>
@@ -992,7 +1072,7 @@
       </div>
       <div class="project-footer">
         <span class="project-company">Grupo Perti / B&P · 2016</span>
-        <span class="tag" style="border-color: rgba(255,179,71,0.3); color: #ffb347;">GeoTech</span>
+        <span class="tag" style="border-color: rgba(255,179,71,0.3); color: #ffb347;">Geolocalización</span>
       </div>
     </div>
 
@@ -1011,7 +1091,7 @@
       </div>
       <div class="project-footer">
         <span class="project-company">ARRASA · 2012</span>
-        <span class="tag accent">Security</span>
+        <span class="tag accent">Seguridad</span>
       </div>
     </div>
 
@@ -1030,7 +1110,7 @@
       </div>
       <div class="project-footer">
         <span class="project-company">Hosting Business / TV Azteca · 2009–2010</span>
-        <span class="tag purple">Media Tech</span>
+        <span class="tag purple">Tecnología de medios</span>
       </div>
     </div>
 
@@ -1040,8 +1120,8 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <span class="section-tag">03 — Stack</span>
-    <h2 class="section-title">Tecnologías & herramientas</h2>
+    <span class="section-tag">03 — Stack tecnológico</span>
+    <h2 class="section-title">Tecnologías y herramientas</h2>
   </div>
 
   <div class="skills-grid">
@@ -1147,7 +1227,7 @@
         <span class="pill" style="background: rgba(124,111,255,0.08); border: 1px solid rgba(124,111,255,0.25); color: var(--accent2);">Scrum</span>
         <span class="pill" style="background: rgba(124,111,255,0.08); border: 1px solid rgba(124,111,255,0.25); color: var(--accent2);">Kanban</span>
         <span class="pill" style="background: rgba(124,111,255,0.08); border: 1px solid rgba(124,111,255,0.25); color: var(--accent2);">DevOps</span>
-        <span class="pill tag">ITIL Fundaments</span>
+        <span class="pill tag">ITIL Fundamentos</span>
         <span class="pill tag">PMI</span>
         <span class="pill tag">RUP / CMMI</span>
         <span class="pill tag">Tech Lead</span>
@@ -1164,7 +1244,7 @@
 <section id="educacion">
   <div class="section-header">
     <span class="section-tag">04 — Formación</span>
-    <h2 class="section-title">Educación & cursos</h2>
+    <h2 class="section-title">Educación y cursos</h2>
   </div>
 
   <div class="edu-grid">
@@ -1185,7 +1265,7 @@
     </div>
     <div class="edu-card" style="border-top: 2px solid var(--accent3);">
       <div class="edu-degree">Cursos</div>
-      <div class="edu-school" style="color: var(--muted); margin-bottom: 0.5rem;">Formación complementaria · No son certificaciones</div>
+      <div class="edu-school" style="color: var(--muted); margin-bottom: 0.5rem;">Formación complementaria</div>
       <div class="job-tags">
         <span class="tag accent">AWS Solutions Architect</span>
         <span class="tag purple">AWS Developer</span>
@@ -1201,7 +1281,7 @@
 <!-- DOWNLOAD SECTION -->
 <section id="descargar" style="background: var(--bg3); text-align: center; padding: 3.5rem 2rem;">
   <div class="section-header" style="justify-content: center; margin-bottom: 1rem;">
-    <span class="section-tag">05 — Download</span>
+    <span class="section-tag">05 — CV</span>
     <h2 class="section-title">Descargar CV</h2>
   </div>
   <p style="color: var(--muted); font-size: 0.82rem; margin-bottom: 2rem;">Descarga mi currículum en el formato que prefieras</p>
@@ -1214,7 +1294,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       Descargar Word
     </a>
-    <a href="https://wa.me/525527237092?text=Hola%20Marco%2C%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" class="btn-download btn-whatsapp">
+    <a href="https://wa.me/525527237092?text=Hola%20Marco%2C%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-download btn-whatsapp">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
       WhatsApp
     </a>
@@ -1229,12 +1309,12 @@
   <a class="contact-item" href="tel:+525527237092">
     <span class="icon">☎</span> (55) 2723-7092
   </a>
-  <a class="contact-item" href="https://wa.me/525527237092?text=Hola%20Marco%2C%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" style="color: #25D366;">
+  <a class="contact-item" href="https://wa.me/525527237092?text=Hola%20Marco%2C%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" style="color: #25D366;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink:0;margin-right:4px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
     WhatsApp
   </a>
   <span class="contact-item">
-    <span class="icon">📍</span> Roma Sur, Ciudad de México · 06760
+    <span class="icon">📍</span> Ciudad de México, México
   </span>
   <a class="contact-item" href="https://www.linkedin.com/in/marco-antonio-gonz%C3%A1lez-obregon-111a581b1/" target="_blank">
     <span class="icon">🔗</span> LinkedIn
@@ -1259,21 +1339,24 @@
 
 <script>
   // Intersection Observer para fade-in
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
+  const animatedItems = document.querySelectorAll('.job, .project-card, .skill-group, .edu-card, .stat-card');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    animatedItems.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.job, .project-card, .skill-group, .edu-card, .stat-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
+  }
 
   // Nav highlight activo al hacer scroll
   const sections = document.querySelectorAll('section[id]');
